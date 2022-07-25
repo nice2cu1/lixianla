@@ -36,7 +36,7 @@ def wecom_app(title: str, content: str):
     touser = '@all' # 消息推送范围，@all代表整个部门
     agentid = '' # 应用id
     try:
-        media_id = '-6OHBy9UbMgQVDd4F1tbSWKjDhCf5o4ay' # 素材库图片media_id
+        media_id = '' # 素材库图片media_id
     except IndexError:
         media_id = ""
     wx = WeCom(corpid, corpsecret, agentid)
@@ -138,13 +138,15 @@ if __name__=="__main__":
         #登录数据
         login_data = {
             'email': "", #邮箱
-            'password': "", #密码 md5 32位小写
+            'password': "", #密码  32位小写md5
             "vcode": code #验证码
         }
         login_response = login_session.post(login_url, data= login_data)
         login_response_bs = BeautifulSoup(login_response.content, 'html.parser')
         if login_response_bs.find(id='body').text.strip() == '密码错误':
             print("登录出错："+login_response_bs.find(id='body').text.strip())
+            wecom_app('密码错误','请检查密码是否为32位小写md5加密！')   
+            break
         elif login_response_bs.find(id='body').text.strip() == '验证码不正确' :
             print("登录出错："+login_response_bs.find(id='body').text.strip()+",将在1s后重试")
             time.sleep(1)
@@ -195,10 +197,12 @@ if __name__=="__main__":
             elif sign_response_bs.find(id='body').text.strip() == '今天已经签过啦！':
                 sign_msg = 1
                 wecom_app(sign_response_bs.find(id='body').text.strip(),sign_response_bs.find(id='body').text.strip())
-            elif sign_response_bs.find(id='body').text.strip() in '成功签到！' :
+                break
+            elif '成功签到' in sign_response_bs.find(id='body').text.strip() :
                 sign_msg = 1               
                 print(sign_response_bs.find(id='body').text.strip())  
-                wecom_app('签到成功',sign_response_bs.find(id='body').text.strip())   
+                wecom_app('签到成功',sign_response_bs.find(id='body').text.strip())
+                break
             print (f"count = {sign_response_bs.find(id='body').text.strip()}")
             print(f"msg = {sign_msg}")
             print("-----------------------------------")                               

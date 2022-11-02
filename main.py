@@ -95,6 +95,10 @@ if __name__=="__main__":
             print("登录出错："+login_response_bs.find(id='body').text.strip())
             dingding_bot('密码错误','请检查密码是否为32位小写md5加密！')   
             break
+        elif login_response_bs.find(id='body').text.strip() == '邮箱不存在':
+            print("登录出错："+login_response_bs.find(id='body').text.strip())
+            dingding_bot('邮箱不存在，请验证邮箱是否有误！')   
+            break
         elif login_response_bs.find(id='body').text.strip() == '验证码不正确' :
             print("登录出错："+login_response_bs.find(id='body').text.strip()+",将在1s后重试")
             time.sleep(1)

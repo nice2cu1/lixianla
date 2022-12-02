@@ -2,24 +2,24 @@
 lixianla.com auto sign task
 
 
-# ×Ô¶¯»¯ÈÎÎñ
+# è‡ªåŠ¨åŒ–ä»»åŠ¡
 
-ÍÆ¼ö²¿ÊðÔÚÈíÂ·ÓÉÖÐ£¬ÒÔÊµÏÖ0µã×¼Ê±Ç©µ½£¬ÔÆº¯Êý²¢Î´×öÊÊÅä£¬ÓÐÐèÒªÇë×ÔÐÐ±àÂë¡£
+æŽ¨èéƒ¨ç½²åœ¨è½¯è·¯ç”±ä¸­ï¼Œä»¥å®žçŽ°0ç‚¹å‡†æ—¶ç­¾åˆ°ï¼Œäº‘å‡½æ•°å¹¶æœªåšé€‚é…ï¼Œæœ‰éœ€è¦è¯·è‡ªè¡Œç¼–ç ã€‚
 
 # Github Action
-Çëclone´ËÏîÄ¿£¬×ÔÐÐpushµ½privateÏîÄ¿£¬ÒÔÃâÐ¹Â¶Êý¾Ý£¬Èç¹ûÄãÍ·Ìú£¬×ÔÐÐfork²¢ÌîÈëÏàÓ¦Êý¾Ý¡£
+è¯·cloneæ­¤é¡¹ç›®ï¼Œè‡ªè¡Œpushåˆ°privateé¡¹ç›®ï¼Œä»¥å…æ³„éœ²æ•°æ®ï¼Œå¦‚æžœä½ å¤´é“ï¼Œè‡ªè¡Œforkå¹¶å¡«å…¥ç›¸åº”æ•°æ®ã€‚
 
 
-Ê¹ÓÃGithub Action×Ô¶¯»¯ÈÎÎñ~~Ò²Ðí~~´æÔÚ[ÈÎÎñÑÓ³Ù](https://docs.github.com/cn/actions/using-workflows/events-that-trigger-workflows#schedule)¡£
+ä½¿ç”¨Github Actionè‡ªåŠ¨åŒ–ä»»åŠ¡~~ä¹Ÿè®¸~~å­˜åœ¨[ä»»åŠ¡å»¶è¿Ÿ](https://docs.github.com/cn/actions/using-workflows/events-that-trigger-workflows#schedule)ã€‚
 
-Schedule ÉèÖÃµÄ cron Ê±¿Ì£¬½ö½öÊÇ¹¤×÷Á÷½øÐÐ**¼Æ»®ÅÅ¶Ó**µÄÊ±¿Ì£¬¶ø²»ÊÇ×¼È·µÄ**ÔËÐÐÊ±¿Ì**¡£
+Schedule è®¾ç½®çš„ cron æ—¶åˆ»ï¼Œä»…ä»…æ˜¯å·¥ä½œæµè¿›è¡Œ**è®¡åˆ’æŽ’é˜Ÿ**çš„æ—¶åˆ»ï¼Œè€Œä¸æ˜¯å‡†ç¡®çš„**è¿è¡Œæ—¶åˆ»**ã€‚
 
-[½â¾ö·½°¸](https://zhuanlan.zhihu.com/p/379365305)
+[è§£å†³æ–¹æ¡ˆ](https://zhuanlan.zhihu.com/p/379365305)
 
 
-¸ù¾Ý²âÊÔ£¬Github AcionÈÎÎñ½«Õû¸öÔËÐÐ»·¾³²¿ÊðÍê³ÉÐèÒª»¨·Ñ30s×óÓÒ£¬Èç¹ûÓÐÔÚ0µã×¼Ê±´ò¿¨µÄÐèÇó£¬ÇëÓÅÏÈ¿¼ÂÇÈíÂ·ÓÉ²¿Êð¡£
+æ ¹æ®æµ‹è¯•ï¼ŒGithub Acionä»»åŠ¡å°†æ•´ä¸ªè¿è¡ŒçŽ¯å¢ƒéƒ¨ç½²å®Œæˆéœ€è¦èŠ±è´¹30så·¦å³ï¼Œå¦‚æžœæœ‰åœ¨0ç‚¹å‡†æ—¶æ‰“å¡çš„éœ€æ±‚ï¼Œè¯·ä¼˜å…ˆè€ƒè™‘è½¯è·¯ç”±éƒ¨ç½²ã€‚
 
-ÔÚAcionÖÐ½¨ÒéÎªmainº¯ÊýÖ´ÐÐ30s×óÓÒÑÓ³Ù£¬²¢½«crontabÌáÇ°ÎªÃ¿Ìì23:59ÔËÐÐ£¨×¢Òâ**Ê±ÇøÎÊÌâ**£¬±±¾©Ê±¼ä±ÈGithubËùÊ¹ÓÃÊ±Çø¿ì8¸öÐ¡Ê±£©£¬ÀíÂÛÉÏ¿ÉÒÔ½â¾ö´ËÎÊÌâ£¬Î´¾­²âÊÔ£¬Çë×ÔÐÐÊÔÑé¡£
+åœ¨Acionä¸­å»ºè®®ä¸ºmainå‡½æ•°æ‰§è¡Œ30så·¦å³å»¶è¿Ÿï¼Œå¹¶å°†crontabæå‰ä¸ºæ¯å¤©23:59è¿è¡Œï¼ˆæ³¨æ„**æ—¶åŒºé—®é¢˜**ï¼ŒåŒ—äº¬æ—¶é—´æ¯”Githubæ‰€ä½¿ç”¨æ—¶åŒºå¿«8ä¸ªå°æ—¶ï¼‰ï¼Œç†è®ºä¸Šå¯ä»¥è§£å†³æ­¤é—®é¢˜ï¼Œæœªç»æµ‹è¯•ï¼Œè¯·è‡ªè¡Œè¯•éªŒã€‚
 
 # workflows
 ```yaml
@@ -37,10 +37,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.9
+      - name: Set up Python 3.10.6
         uses: actions/setup-python@v2
         with:
-                python-version: 3.9
+                python-version: 3.10.6
                 
                 
       - name: Install dependencies
@@ -55,7 +55,7 @@ jobs:
               python main.py
 ```
 
-# ×¢ÒâÊÂÏî
-ÓÉÓÚ[²»¿É¿¹¾ÜµÄÁ¦Á¿](https://work.weixin.qq.com/nl/act/p/32d807ad4c554975)£¬ÆóÒµÎ¢ÐÅÍÆËÍ·½Ê½ÆúÓÃ£¬ÇÐ»»Îª¶¤¶¤»úÆ÷ÈË¡£ÈçÓÐÐèÒªÇë×ÔÐÐ²é¿´commits
+# æ³¨æ„äº‹é¡¹
+ç”±äºŽ[ä¸å¯æŠ—æ‹’çš„åŠ›é‡](https://work.weixin.qq.com/nl/act/p/32d807ad4c554975)ï¼Œä¼ä¸šå¾®ä¿¡æŽ¨é€æ–¹å¼å¼ƒç”¨ï¼Œåˆ‡æ¢ä¸ºé’‰é’‰æœºå™¨äººã€‚å¦‚æœ‰éœ€è¦è¯·è‡ªè¡ŒæŸ¥çœ‹commits
 
-Èç¹ûÄãµÄÓ¦ÓÃÓÚ2022Äê6ÔÂ20ÈÕÖ®Ç°´´½¨£¬»òÕßÓµÓÐÒ»¸ö¹Ì¶¨µÄ¹«Íø·Ç·þÎñÉÌIP£¬¿ÉÒÔÊ¹ÓÃÆóÒµÎ¢ÐÅ½øÐÐ£¨¸ü¼ÓÃÀ¹ÛµÄ£©Í¼ÎÄÍÆËÍ¡£
+å¦‚æžœä½ çš„åº”ç”¨äºŽ2022å¹´6æœˆ20æ—¥ä¹‹å‰åˆ›å»ºï¼Œæˆ–è€…æ‹¥æœ‰ä¸€ä¸ªå›ºå®šçš„å…¬ç½‘éžæœåŠ¡å•†IPï¼Œå¯ä»¥ä½¿ç”¨ä¼ä¸šå¾®ä¿¡è¿›è¡Œï¼ˆæ›´åŠ ç¾Žè§‚çš„ï¼‰å›¾æ–‡æŽ¨é€ã€‚

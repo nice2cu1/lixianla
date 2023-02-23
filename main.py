@@ -61,12 +61,7 @@ def dingding_bot(title: str, content: str) -> None:
     else:
         print("钉钉机器人 推送失败！")
 
-
-
-if __name__=="__main__":
-    # time.sleep(random.randint(0,5)) #随机延迟
-    # sign()
-
+def task(email: str, password: str):
     login_msg = ''
     while login_msg != '登录成功':
         login_session = requests.session()
@@ -85,8 +80,8 @@ if __name__=="__main__":
             print("登录验证码："+code)
         #登录数据
         login_data = {
-            'email': "", #邮箱
-            'password': "", #密码  32位小写md5
+            'email': email, #邮箱
+            'password': password, #密码  32位小写md5
             "vcode": code #验证码
         }
         login_response = login_session.post(login_url, data= login_data)
@@ -97,7 +92,7 @@ if __name__=="__main__":
             break
         elif login_response_bs.find(id='body').text.strip() == '邮箱不存在':
             print("登录出错："+login_response_bs.find(id='body').text.strip())
-            dingding_bot('邮箱不存在，请验证邮箱是否有误！')   
+            dingding_bot('邮箱不存在，请验证邮箱是否有误！')
             break
         elif login_response_bs.find(id='body').text.strip() == '验证码不正确' :
             print("登录出错："+login_response_bs.find(id='body').text.strip()+",将在1s后重试")
@@ -106,6 +101,8 @@ if __name__=="__main__":
             print(login_response_bs.find(id='body').text.strip())
         else :
             print('登录出错：'+login_response_bs.find(id='body').text.strip())
+            dingding_bot('登录出错',login_response_bs.find(id='body').text.strip())
+            break
 
         login_msg = login_response_bs.find(id='body').text.strip()
     else:    
@@ -157,4 +154,13 @@ if __name__=="__main__":
                 break
             print (f"count = {sign_response_bs.find(id='body').text.strip()}")
             print(f"msg = {sign_msg}")
-            print("-----------------------------------")                               
+            print("-----------------------------------")
+
+if __name__=="__main__":
+    # time.sleep(random.randint(0,5)) #随机延迟
+    # sign()                         
+    with open('user.json', 'r', encoding='utf-8') as f:
+        user = json.load(f)
+    for i in user:
+        task(i['email'],i['password'])
+        time.sleep(random.randint(0,5))

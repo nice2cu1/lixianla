@@ -6,6 +6,8 @@ lixianla.com auto sign task
 
 推荐部署在软路由中，以实现0点准时签到，云函数并未做适配，有需要请自行编码。
 
+密码请自行进行32位小写md5加密，不要直接填写明文密码。
+
 # Github Action
 请clone此项目，自行push到private项目，以免泄露数据，如果你头铁，自行fork并填入相应数据。
 

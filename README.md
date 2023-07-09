@@ -39,20 +39,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.10.6
+      - name: Set up Python 3.11.1
         uses: actions/setup-python@v2
         with:
-                python-version: 3.10.6
-                
+                python-version: '3.11.1'
                 
       - name: Install dependencies
         run: |
               python -m pip install --upgrade pip
-              pip install requests
-              pip install ddddocr
-              pip install bs4
+              pip install requests==2.28.2
+              pip install ddddocr==1.0.6
+              pip install beautifulsoup4==4.12.2
+              pip install Pillow==9.2.0
       
-      - name: Sign Task
+      - name: Sign lixianla
         run: |
               python main.py
 ```

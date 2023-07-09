@@ -64,7 +64,7 @@ def task(email: str, password: str):
             img_code_url = f'https://lixianla.com/{img}'
             print_log("登录验证码地址：" + img_code_url)
             code_response = login_session.get(img_code_url)
-            ocr = ddddocr.DdddOcr(show_ad=False)
+            ocr = ddddocr.DdddOcr()
             login_code = ocr.classification(code_response.content)
             print_log("登录验证码：" + login_code)
         # 登录
